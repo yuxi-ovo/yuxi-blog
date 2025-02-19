@@ -277,8 +277,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 :deep(.v-timeline--vertical.v-timeline .v-timeline-item .v-timeline-item__body) {
-  // padding-inline-start: 10px;
-  // padding-inline-end: 10px;
   width: 40vw !important;
 }
 :deep(.v-card-title) {
@@ -293,7 +291,6 @@ onMounted(() => {
     position: relative;
     z-index: 1;
     &::after {
-      content: '';
       display: v-bind(isShowBg);
       position: absolute;
       z-index: -1;
@@ -345,6 +342,7 @@ onMounted(() => {
       .sub-title {
         font-size: 4vw;
         margin: 10px 0;
+        word-break: keep-all;
       }
       .introduce {
         font-size: 2vw;

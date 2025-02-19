@@ -18,20 +18,8 @@
         <p>努力做一个更好的程序员</p>
       </div>
       <div @click="jump" class="menu-list">
-        <div class="menu-item" :class="{ active: p === '/home' }">
-          <router-link to="/home">首页</router-link>
-        </div>
-        <div class="menu-item" :class="{ active: p === '/blog' }">
-          <router-link to="/blog">博客</router-link>
-        </div>
-        <div class="menu-item" :class="{ active: p === '/snippet' }">
-          <router-link to="/snippet">片段</router-link>
-        </div>
-        <div class="menu-item" :class="{ active: p === '/about' }">
-          <router-link to="/about">关于</router-link>
-        </div>
-        <div class="menu-item" :class="{ active: p === '/courseTool' }">
-          <router-link to="/courseTool">CourseTool</router-link>
+        <div class="menu-item" v-for="d in mainStore.navList" @click="router.push(d.path)">
+          {{ d.name }}
         </div>
       </div>
     </div>
@@ -39,9 +27,13 @@
 </template>
 
 <script setup lang="ts">
+import { useMainStore } from '@/stores/main'
+
+const mainStore = useMainStore()
 const emit = defineEmits(['close'])
 const close = () => emit('close')
 const route = useRoute()
+const router = useRouter()
 const p = ref('')
 function jump() {
   emit('close')
@@ -50,7 +42,6 @@ function jump() {
 watch(
   () => route.path,
   () => {
-    console.log(route.path)
     p.value = route.path
   }
 )

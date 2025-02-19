@@ -40,7 +40,8 @@ body {
 }
 @font-face {
   font-family: 'main';
-  src: url('../assets/YeZiGongChangRuiYunNongKaiShu-2.ttf');
+  src: url('../assets/main.woff2');
+  font-display: swap;
 }
 html {
   font-size: 14px;

@@ -99,7 +99,7 @@ onBeforeUnmount(() => {
   margin-top: 70px;
   @include flex-center;
   .container {
-    width: 50vw;
+    width: 60vw;
     @include flex-center;
     flex-direction: column;
     align-items: flex-start;
