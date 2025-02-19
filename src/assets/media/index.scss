@@ -1,0 +1,100 @@
+@media screen and (max-width: 768px) {
+  body {
+    .container {
+      width: 80vw !important;
+    }
+    .banner .container .text {
+      font-size: 10vw !important;
+    }
+    .banner .container .text p:nth-child(2) {
+      font-size: 12vw !important;
+      margin: 20px 0;
+    }
+    .banner .container .text .typed {
+      font-size: 6.7vw !important;
+    }
+    .banner .container .text {
+      font-size: 7vw !important;
+      .gsap-4 {
+        margin: 20px 0;
+        margin-left: -3px !important;
+      }
+    }
+    .banner .container .text .ts {
+      margin-left: 5px !important;
+    }
+    .banner .container .text span {
+      font-size: 6vw !important;
+    }
+    .banner .container .text p:last-child {
+      font-size: 4.5vw !important;
+    }
+    .footer {
+      .container {
+        flex-direction: column !important;
+      }
+      .container .nav-list {
+        margin: 0 !important;
+        margin-top: 10vw !important;
+      }
+      .copy-right {
+        flex-direction: column !important;
+        font-size: 2vw !important;
+      }
+    }
+  }
+  .header .container .left {
+    display: none !important;
+  }
+  .header .container .right .nav-list {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 769px) {
+  .header .container {
+    display: flex !important;
+  }
+  .media-menu-icon {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .course-tool {
+    .trait {
+      .container {
+        flex-direction: column;
+        .trait-item {
+          width: 100% !important;
+          height: 180px !important;
+          margin-bottom: 20px;
+          .text {
+            text-align: center;
+          }
+        }
+      }
+    }
+    .developer .bug-con .container {
+      flex-wrap: wrap;
+      margin-top: 0 !important;
+      > div {
+        margin-top: 20px;
+      }
+    }
+    .banner .container .title {
+      font-size: 36px !important;
+    }
+    .banner .container .sub-title {
+      font-size: 36px !important;
+    }
+    .banner .container .introduce {
+      font-size: 20px !important;
+    }
+    .develop .v-card-text {
+      padding: 10px !important;
+    }
+  }
+  .container .my-skill .skill-list .skill-row::after {
+    top: 20% !important;
+  }
+}
