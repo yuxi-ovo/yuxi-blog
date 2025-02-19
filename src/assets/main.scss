@@ -1,0 +1,22 @@
+$main-color: #1f63c7;
+$sub-color: #a3a3a3;
+$main-font-size: 14px;
+@mixin flex-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin Hover-Primary($key: '', $value: $main-color, $duration: 0.3s, $additional-selector: '&') {
+  & {
+    transition: $key $duration ease; // 移到这里
+  }
+  &:hover {
+    #{$key}: $value; // 动态设置CSS属性
+  }
+}

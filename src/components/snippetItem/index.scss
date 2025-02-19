@@ -1,0 +1,32 @@
+.snippet-item {
+  border-radius: 10px;
+  width: 48%;
+  padding: 20px;
+  cursor: pointer;
+  @include Hover-Primary(background, var(--snippet-hover-color), 0.3s);
+
+  .tag-list {
+    font-size: 14px;
+    color: var(--color);
+    @include flex-primary;
+    justify-content: flex-start;
+    .tag {
+      width: fit-content;
+      @include flex-center;
+      margin-right: 10px;
+    }
+  }
+  .title {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+  .subtitle {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--sub-color);
+  }
+  .time {
+    font-size: 14px;
+    color: var(--sub-color);
+  }
+}
