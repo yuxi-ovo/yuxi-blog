@@ -1,6 +1,7 @@
 <template>
   <div class="course-tool">
     <div class="banner">
+      <FallingStarsBg style="background: var(--background)" :count="50" />
       <div class="container">
         <div class="inner gsap-courseTool-5"></div>
         <div class="logo">
@@ -20,10 +21,7 @@
             <p>即刻体验</p>
             <hover-show :isShow="showERcode">
               <template #default>
-                <v-img
-                  src="https://zrovo.oss-cn-beijing.aliyuncs.com/my-web-blog/%E4%B8%8B%E8%BD%BD.png"
-                  :width="200"
-                ></v-img>
+                <img src="../assets/ercode.jpg" alt="" />
               </template>
             </hover-show>
           </div>
@@ -117,59 +115,41 @@
         <p>CourseTool 作者</p>
       </div>
       <div class="container">
-        <div class="developer-item">
-          <div class="pic">
-            <v-img
-              src="https://zrovo.oss-cn-beijing.aliyuncs.com/my-web-blog/WechatIMG106648.jpg"
-              :width="200"
-            ></v-img>
-          </div>
-          <div class="name">
-            <p>张瑞</p>
-          </div>
-        </div>
-      </div>
-      <div class="develop-con">
-        <div class="title">
-          <p>开发贡献者</p>
-        </div>
-        <div class="container">
-          <div class="developer-item">
-            <div class="pic">
-              <v-img
-                src="https://zrovo.oss-cn-beijing.aliyuncs.com/my-web-blog/Snipaste_2024-10-11_10-57-17.png"
-                :width="150"
-              ></v-img>
+        <CardContainer>
+          <CardBody
+            class="group/card relative size-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 sm:w-[30rem] dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] cursor-pointer"
+          >
+            <CardItem :translate-z="50" class="text-2xl font-bold text-black"> 张瑞 </CardItem>
+            <CardItem as="p" translate-z="60" class="mt-2 max-w-sm text-m text-black">
+              Hover over this card to unleash the power of CSS perspective
+            </CardItem>
+            <CardItem :translate-z="100" class="h-20h mt-4 w-full flex justify-center">
+              <img
+                src="../assets/logo.jpg"
+                class="rounded-full object-cover group-hover/card:shadow-xl"
+                style="width: 220px; height: 220px"
+                alt="thumbnail"
+              />
+            </CardItem>
+            <div class="mt-10 flex items-center justify-end">
+              <CardItem
+                :translate-z="20"
+                as="button"
+                class="rounded-xl bg-black px-4 py-2 text-xs font-bold text-white dark:bg-white dark:text-black"
+              >
+                Get Started
+              </CardItem>
             </div>
-            <div class="name">
-              <p>王宇祥</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="bug-con">
-        <div class="title">
-          <p>bug贡献者</p>
-        </div>
-        <div class="container">
-          <div class="developer-item" v-for="d in bugConList">
-            <div v-if="!!d.pic" class="pic">
-              <v-img :src="d.pic" :width="50"></v-img>
-            </div>
-            <div v-else class="text">{{ d.name[0] }}</div>
-            <!-- <div class="name">
-              <p>{{ d.name }}</p>
-            </div> -->
-          </div>
-        </div>
+          </CardBody>
+        </CardContainer>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import batchAddAnimation from '@/hooks/batchAddAnimation'
-import { useCurrentTheme } from '@/hooks/switchTheme'
+import batchAddAnimation from '@/hooks/useBatchAddAnimation'
+import { useCurrentTheme } from '@/hooks/useSwitchTheme'
 import t from 'gsap'
 
 const items = [
@@ -373,7 +353,8 @@ onMounted(() => {
           border-radius: 20px;
           background-clip: padding-box, border-box;
           background-origin: padding-box, border-box;
-          background-image: linear-gradient(to right, var(--background), var(--background)),
+          background-image:
+            linear-gradient(to right, var(--background), var(--background)),
             linear-gradient(90deg, #00dbde 25%, #fc00ff 100%);
           color: var(--color);
           margin-left: 40px;

@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import SnippetItem from '@/components/snippetItem/snippetItem'
-import batchAddAnimation from '@/hooks/batchAddAnimation'
+import batchAddAnimation from '@/hooks/useBatchAddAnimation'
 import t from 'gsap'
 
 const snippetList = [

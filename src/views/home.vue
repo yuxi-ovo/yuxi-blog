@@ -1,58 +1,59 @@
 <template>
-  <div class="banner">
-    <div class="container">
-      <div class="text">
-        <p class="gsap-1">你好,我是</p>
-        <p class="gsap-2">张瑞</p>
-        <span class="gsap-3 typed"> </span>
-        <p class="gsap-4">
-          喜欢<span class="vue">Vue</span>、<span class="javascript">JavaScript</span>、<span
-            class="ts"
-            >TypeScript</span
-          >
-        </p>
-        <p class="subtitle gsap-5">我在这个网站记录我的成长,努力💪成为一个更好的程序员</p>
-      </div>
-      <div class="bth-list gsap-6">
-        <div class="my-blog">
-          <router-link to="/blog">我的博客</router-link>
+  <div class="home">
+    <div class="banner">
+      <div class="container">
+        <div class="text">
+          <p class="gsap-1">你好,我是</p>
+          <p class="gsap-2">张瑞</p>
+          <span class="gsap-3 typed"> </span>
+          <p class="gsap-4">
+            喜欢<span class="vue">Vue</span>、<span class="javascript">JavaScript</span>、<span
+              class="ts"
+              >TypeScript</span
+            >
+          </p>
+          <p class="subtitle gsap-5">我在这个网站记录我的成长,努力💪成为一个更好的程序员</p>
         </div>
-        <div class="about-my">
-          <router-link to="/about">关于我</router-link>
+        <div class="bth-list gsap-6">
+          <div class="my-blog">
+            <router-link to="/blog">我的博客</router-link>
+          </div>
+          <div class="about-my">
+            <router-link to="/about">关于我</router-link>
+          </div>
         </div>
-      </div>
-      <div class="contact gsap-7">
-        <div class="contact-item">
-          <span class="github"></span>
-        </div>
-        <div class="contact-item">
-          <img src="../../public/icon/csdn.svg" />
-        </div>
-        <div class="contact-item">
-          <img src="../../public/icon/Bilibili.png" />
-        </div>
-        <div class="contact-item">
-          <img src="../../public/icon/微信.png" />
-        </div>
-        <div class="contact-item">
-          <img src="../../public/icon/QQ.svg" />
-        </div>
-        <div class="contact-item">
-          <img src="../../public/icon/juejin.png" />
+        <div class="contact gsap-7">
+          <div class="contact-item">
+            <span class="github"></span>
+          </div>
+          <div class="contact-item">
+            <img src="../../public/icon/csdn.svg" />
+          </div>
+          <div class="contact-item">
+            <img src="../../public/icon/Bilibili.png" />
+          </div>
+          <div class="contact-item">
+            <img src="../../public/icon/微信.png" />
+          </div>
+          <div class="contact-item">
+            <img src="../../public/icon/QQ.svg" />
+          </div>
+          <div class="contact-item">
+            <img src="../../public/icon/juejin.png" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="mouse gsap-8">
-    <div class="inner"></div>
-    <div class="arrow"></div>
+    <div class="mouse gsap-8">
+      <div class="inner"></div>
+      <div class="arrow"></div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import batchAddAnimation from '@/hooks/batchAddAnimation'
-import t from 'gsap'
+import useBatchAddAnimation from '@/hooks/useBatchAddAnimation'
 import typed from 'typed.js'
 
 onMounted(() => {
@@ -66,16 +67,9 @@ onMounted(() => {
     '.gsap-7',
     '.gsap-8'
   ]
-  batchAddAnimation(gsapList, (el, index) => {
-    t.from(el, {
-      opacity: 0,
-      y: 100,
-      delay: index * 0.5,
-      duration: 0.3
-    })
-  })
+  useBatchAddAnimation(gsapList)
   var options = {
-    strings: ['A Web &lt;Developer /&gt.', '一名前端开发工程师。'],
+    strings: ['A Web &lt;Developer /&gt;', '一名前端开发工程师。'],
     backSpeed: 70,
     typeSpeed: 100,
     startDelay: 1200,

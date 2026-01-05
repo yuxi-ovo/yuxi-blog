@@ -224,7 +224,7 @@
 </template>
 
 <script setup lang="ts">
-import batchAddAnimation from '@/hooks/batchAddAnimation'
+import batchAddAnimation from '@/hooks/useBatchAddAnimation'
 import t from 'gsap'
 onMounted(() => {
   const gsapList = [

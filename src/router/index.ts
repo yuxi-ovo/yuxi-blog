@@ -1,11 +1,14 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history:
+    import.meta.env.VITE_ENV === 'production'
+      ? createWebHashHistory(import.meta.env.BASE_URL)
+      : createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: 'loading'
     },
     {
       path: '/home',
@@ -36,6 +39,11 @@ const router = createRouter({
       path: '/snippet-details',
       name: 'snippetDetail',
       component: () => import('../views/snippet-details.vue')
+    },
+    {
+      path: '/loading',
+      name: 'loading',
+      component: () => import('../views/loading.vue')
     }
   ]
 })

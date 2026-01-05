@@ -54,8 +54,8 @@
 </template>
 
 <script setup lang="ts">
-import batchAddAnimation from '@/hooks/batchAddAnimation'
-import useSwitchTheme from '@/hooks/switchTheme'
+import batchAddAnimation from '@/hooks/useBatchAddAnimation'
+import useSwitchTheme from '@/hooks/useSwitchTheme'
 import useRouteData from '@/hooks/useRouteData'
 import t from 'gsap'
 import { onMounted, ref } from 'vue'
