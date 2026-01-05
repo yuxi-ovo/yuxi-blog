@@ -26,7 +26,7 @@
           <p>统计</p>
         </div>
         <div class="nav-item">
-          <p>今日2次浏览</p>
+          <p>今日222次浏览</p>
         </div>
         <div class="nav-item">
           <p>今日4人访问</p>
