@@ -8,12 +8,5 @@ import { useMainStore } from './stores/main'
 const mainStore = useMainStore()
 
 const isShow = ref(mainStore.isRenderPage)
-
-watch(
-  () => mainStore.isRenderPage,
-  () => {
-    console.log(mainStore.isRenderPage)
-  }
-)
 </script>
 <style scoped></style>

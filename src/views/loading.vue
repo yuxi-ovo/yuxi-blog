@@ -14,13 +14,13 @@ import router from '@/router'
 
 const mainStore = useMainStore()
 onMounted(() => {
-  nextTick(() => {
-    setTimeout(() => {
-      console.log(mainStore.isRenderPage)
-      mainStore.setIsRenderPage(true)
-      router.push('/home')
-    }, 2000)
-  })
+  const finishLoading = () => {
+    mainStore.setIsRenderPage(true)
+    router.push('/home')
+    window.removeEventListener('load', finishLoading)
+  }
+
+  window.addEventListener('load', finishLoading)
 })
 </script>
 

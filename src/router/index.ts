@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import loading from '../views/loading.vue'
 
 const router = createRouter({
   history:
@@ -43,7 +44,7 @@ const router = createRouter({
     {
       path: '/loading',
       name: 'loading',
-      component: () => import('../views/loading.vue')
+      component: loading
     }
   ]
 })
