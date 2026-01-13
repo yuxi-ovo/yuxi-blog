@@ -15,7 +15,6 @@ import vuetify from 'vite-plugin-vuetify'
 export default defineConfig({
   base: './',
   plugins: [
-    vuetify(),
     tailwindcss(),
     vue(),
     vueJsx(),
@@ -23,6 +22,7 @@ export default defineConfig({
       imports: ['vue', 'vue-router'],
       dts: 'src/auto-imports.d.ts'
     }),
+    vuetify(),
     Components({
       dts: true,
       resolvers: [MotionResolver()]
