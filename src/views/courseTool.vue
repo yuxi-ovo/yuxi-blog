@@ -117,7 +117,7 @@
       <div class="container">
         <CardContainer>
           <CardBody
-            class="group/card relative size-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 sm:w-[30rem] dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] cursor-pointer"
+            class="group/card relative size-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 sm:w-[30rem] dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] cursor-pointer p-10px"
           >
             <CardItem :translate-z="50" class="text-2xl font-bold text-black"> 张瑞 </CardItem>
             <CardItem as="p" translate-z="60" class="mt-2 max-w-sm text-m text-black">
@@ -137,7 +137,7 @@
                 as="button"
                 class="rounded-xl bg-black px-4 py-2 text-xs font-bold text-white dark:bg-white dark:text-black"
               >
-                Get Started
+                <p @click="useJumpGithub">Get Started</p>
               </CardItem>
             </div>
           </CardBody>
@@ -151,6 +151,7 @@
 import batchAddAnimation from '@/hooks/useBatchAddAnimation'
 import { useCurrentTheme } from '@/hooks/useSwitchTheme'
 import t from 'gsap'
+import useJumpGithub from '@/hooks/useJumpGithub'
 
 const items = [
   {
@@ -353,8 +354,7 @@ onMounted(() => {
           border-radius: 20px;
           background-clip: padding-box, border-box;
           background-origin: padding-box, border-box;
-          background-image:
-            linear-gradient(to right, var(--background), var(--background)),
+          background-image: linear-gradient(to right, var(--background), var(--background)),
             linear-gradient(90deg, #00dbde 25%, #fc00ff 100%);
           color: var(--color);
           margin-left: 40px;

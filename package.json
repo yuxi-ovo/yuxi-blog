@@ -26,6 +26,7 @@
     "pinia": "^2.1.7",
     "tailwindcss": "^4.1.10",
     "typed.js": "^2.1.0",
+    "vite-plugin-vuetify": "^2.1.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vuetify": "^3.7.1"

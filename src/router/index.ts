@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
 import loading from '../views/loading.vue'
+import { useMainStore } from '@/stores/main'
 
 const router = createRouter({
   history:
@@ -47,6 +48,15 @@ const router = createRouter({
       component: loading
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const mainStore = useMainStore()
+  if (!mainStore.isRenderPage && to.path !== '/loading') {
+    next('/loading')
+  } else {
+    next()
+  }
 })
 
 export default router
