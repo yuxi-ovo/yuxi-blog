@@ -112,12 +112,12 @@
     </div>
     <div class="developer">
       <div class="title">
-        <p>CourseTool 作者</p>
+        <p class="p-10 m-10">CourseTool 作者</p>
       </div>
       <div class="container">
         <CardContainer>
           <CardBody
-            class="group/card relative size-auto rounded-xl border border-black/[0.1] bg-gray-50 p-6 sm:w-[30rem] dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] cursor-pointer p-10px"
+            class="group/card relative size-auto rounded-xl border border-black/[0.1] bg-gray-50 !p-6 sm:w-[30rem] dark:border-white/[0.2] dark:bg-black dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] cursor-pointer"
           >
             <CardItem :translate-z="50" class="text-2xl font-bold text-black"> 张瑞 </CardItem>
             <CardItem as="p" translate-z="60" class="mt-2 max-w-sm text-m text-black">

@@ -15,7 +15,8 @@ const router = createRouter({
     {
       path: '/home',
       name: 'home',
-      component: () => import('../views/home.vue')
+      component: () => import('../views/home.vue'),
+      meta: { requiresReady: true }
     },
     {
       path: '/about',
@@ -50,13 +51,21 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to) => {
   const mainStore = useMainStore()
-  if (!mainStore.isRenderPage && to.path !== '/loading') {
-    next('/loading')
-  } else {
-    next()
+  if (to.meta.requiresReady && !mainStore.isRenderPage) {
+    console.log(to)
+    return {
+      path: '/loading',
+      query: { redirect: to.fullPath }
+    }
   }
+
+  if (to.path === '/loading' && mainStore.isRenderPage) {
+    const redirect = to.query.redirect as string
+    return redirect || '/home'
+  }
+  mainStore.setIsRenderPage(true)
 })
 
 export default router
